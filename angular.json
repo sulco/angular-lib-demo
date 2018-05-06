@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "tvmaze": {
+      "root": "projects/tvmaze",
+      "sourceRoot": "projects/tvmaze/src",
+      "projectType": "library",
+      "prefix": "tm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tvmaze/tsconfig.lib.json",
+            "project": "projects/tvmaze/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/tvmaze/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tvmaze/src/test.ts",
+            "tsConfig": "projects/tvmaze/tsconfig.spec.json",
+            "karmaConfig": "projects/tvmaze/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tvmaze/tsconfig.lib.json",
+              "projects/tvmaze/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "lib-demo"
