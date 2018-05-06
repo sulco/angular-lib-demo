@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import { TvmazeComponent } from './tvmaze.component';
 
 @NgModule({
-  imports: [
-  ],
-  declarations: [TvmazeComponent],
-  exports: [TvmazeComponent]
+  imports: [],
+  declarations: [],
+  exports: []
 })
-export class TvmazeModule { }
+export class TvmazeModule {}
